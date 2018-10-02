@@ -1,11 +1,12 @@
 odoo:
-  image: odoo
+  image: odoo:11.0
   ports:
     - "8069:8069"
+    - "8072:8072"
   links:
     - db
 db:
-  image: postgres
+  image: postgres:9.6
   environment:
     - POSTGRES_USER=odoo
     - POSTGRES_PASSWORD=odoo
